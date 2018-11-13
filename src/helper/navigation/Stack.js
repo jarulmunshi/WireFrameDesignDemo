@@ -12,7 +12,7 @@ const stack = createStackNavigator(
         }
     },
     {
-        initialRouteName:'Home',
+        initialRouteName:'SignUp',
         headerMode:'none'
     }
 );

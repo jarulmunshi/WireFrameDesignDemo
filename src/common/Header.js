@@ -7,15 +7,17 @@ const Header = (props) =>{
     const {headerStyle,textStyle} = headerStyles;
     return(
         <View style={headerStyle}>
-            <View style={{left:'10%',justifyContent:'center'}}>
+            <View style={{justifyContent:'center',paddingLeft:WindowsWidth * 0.02}}>
                 {props.isBack&&
                 <TouchableWithoutFeedback onPress={()=>props.onBackButtonPress()}>
                     <Icon name={props.iName} size={25} style={{color:Color.lightColor,marginLeft:5}}/>
                 </TouchableWithoutFeedback>}
 
             </View>
-            <View style={{left:WindowsWidth/3,flexDirection:'row',paddingTop:5,alignItems:'center',justifyContent:'center'}}>
-                <Icon style={{paddingRight:5,color:"White"}} name={props.headIcon} size={25}/>
+            <View style={{paddingLeft:WindowsHeight * 0.15,
+                          justifyContent:'center',
+                          alignItems:'center',}}>
+                {/*<Icon style={{paddingRight:5,color:"White"}} name={props.headIcon} size={25}/>*/}
                 <Text style={textStyle}>{props.headerText}</Text>
             </View>
             <View style={{flex:1}}>
@@ -27,13 +29,12 @@ const headerStyles={
     headerStyle:{
         flexDirection:'row',
         backgroundColor:Color.backColor,
-        height:WindowsHeight/10
+        height:WindowsHeight * 0.05
     },
     textStyle:{
         fontWeight:'bold',
-        fontSize:20,
-        color:Color.lightColor,
-
+        fontSize:WindowsHeight * 0.03,
+        color:Color.lightColor
     }
 };
 export {Header};

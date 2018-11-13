@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Text,Image,View,SafeAreaView,TouchableOpacity,ScrollView,StatusBar} from 'react-native';
-import {Card,CardSection,Button,Header} from './common/Common';
+import {Header} from './common/Common';
 import Color from './helper/theme/color';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {WindowsHeight,WindowsWidth} from './common/global';
@@ -21,11 +21,7 @@ class SignUp extends Component{
         //console.log(this.props.userDetail);
         return(
             <SafeAreaView style={{backgroundColor:Color.backColor}}>
-                <StatusBar
-                    backgroundColor="blue"
-                    barStyle="light-content"
-                />
-                {/*<StatusBar backgroundColor="black" barStyle="dark-content"></StatusBar>*/}
+                <StatusBar backgroundColor="black" barStyle="light-content"></StatusBar>
                 <ScrollView>
                     <Header
                         headerText="SIGN UP"
@@ -37,12 +33,21 @@ class SignUp extends Component{
                         <View style={styles.subViewStyle}>
                             <Text>CHOOSE YOUR ACCOUNT TYPE</Text>
                         </View>
-                        <View style={{borderBottomWidth:0.5,borderBottomColor:Color.backColor,height:WindowsHeight/7,flexDirection:'row',left:'2%'}}>
-                            <View style={{width:WindowsWidth}}>
+                        <View style={{borderBottomWidth:0.5,borderBottomColor:Color.backColor,flexDirection:'row',left:WindowsWidth * 0.03}}>
+                            <View style={{width:WindowsWidth * 0.75}}>
                                 <Text style={styles.textHeadStyle}>NIGHTLIFER</Text>
                                 <Text style={styles.subTextStyle}>Discover the hottest nightclubs, bars, & events and connect with nightlife’s top influencers</Text>
                             </View>
-                            <View style={{justifyContent:"center",right:'2%',width:WindowsWidth/6}}>
+                            <View style={{justifyContent:"center",paddingLeft:WindowsWidth * 0.14,width:WindowsWidth * 0.25}}>
+                                <Icon style={{color:"White"}} name="chevron-right" size={25}/>
+                            </View>
+                        </View>
+                        <View style={{borderBottomWidth:0.5,borderBottomColor:Color.backColor,flexDirection:'row',left:WindowsWidth * 0.03}}>
+                            <View style={{width:WindowsWidth * 0.75}}>
+                                <Text style={styles.textHeadStyle}>VENUE OR INFLUENCER</Text>
+                                <Text style={styles.subTextStyle}>Take your digital brand to the next level by managing your custom channel and uploading events</Text>
+                            </View>
+                            <View style={{justifyContent:"center",paddingLeft:WindowsWidth * 0.14,width:WindowsWidth * 0.25}}>
                                 <Icon style={{color:"White"}} name="chevron-right" size={25}/>
                             </View>
                         </View>
@@ -68,16 +73,15 @@ const styles={
     textHeadStyle:{
         color:Color.darkColor,
         fontSize:18,
-        top:'20%',
-        right:'4%',
-        left:'3%'
+        paddingTop:WindowsHeight * 0.03,
+        paddingLeft:WindowsWidth * 0.03
     },
     subTextStyle:{
         color:Color.backColor,
         fontSize:14,
-        top:'38%',
-        right:'17%',
-        left:'3%'
+        paddingTop:WindowsHeight * 0.03,
+        paddingLeft:WindowsWidth * 0.03,
+        paddingBottom:WindowsHeight * 0.02
     }
 };
 
